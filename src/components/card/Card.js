@@ -4,7 +4,9 @@ export default function Card({ movie }){
     const { ranking, title, year, distributor, amount, img: { src, alt }} = movie;
     return (
         <div className='card'>
-            <img src={src} alt={alt} width='200'className='img-style'/>
+            <img style={{
+                margin: 'auto'
+            }} src={src} alt={alt} width='200'className='img-style'/>
             <div className='card-body'>
               <h2>{`${ranking}, ${title}, ${year}`}</h2>
             </div>
