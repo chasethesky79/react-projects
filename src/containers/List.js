@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../components/card/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function List() {
     const [ movieSummary, setMovieSummary ] = useState({ movies: [], loading: true });
@@ -12,9 +13,9 @@ export default function List() {
         }
     })
     return (
-        <div>
+        <div class='row'>
           { loading && <div>Loading...</div>}
-          { movies && movies.map(movie => <Card key={movie.id} movie={movie}/>) }
+          { movies && movies.map(movie => <div class='col-sm-2'><Card key={movie.id} movie={movie}/></div>) }
         </div>
     )
 }
